@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Bee Theme Design System ─────────────────────────────────────────────── */
+
+:root {
+  --bee-yellow: #FFD54F;
+  --bee-gold: #F59E0B;
+  --bee-black: #1A1A1A;
+  --bee-cream: #FFFDE7;
+
+  --bg-gradient: linear-gradient(
+    180deg,
+    #FFFDE7 0%,
+    #FFF9E6 20%,
+    #FFF8E1 40%,
+    #FFF3C4 60%,
+    #FFF9E6 80%,
+    #FFFDE7 100%
+  );
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--bee-black);
+}
+
+/* ─── Honeycomb Pattern ──────────────────────────────────────────────────── */
+
+.honeycomb-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23D97706' stroke-width='0.6'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23D97706' stroke-width='0.6'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+}
+
+/* Global honeycomb on body (very subtle) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23D97706' stroke-width='0.4'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23D97706' stroke-width='0.4'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+  opacity: 0.03;
+}
+
+/* ─── Custom Scrollbar (honey-themed) ─────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FFD54F, #F59E0B);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #FFC107, #D97706);
+}
+
+/* ─── Selection ───────────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: #FFF3C4;
+  color: #92400E;
+}
+
+/* ─── Focus Ring (yellow) ─────────────────────────────────────────────────── */
+
+*:focus-visible {
+  outline: 2px solid #FFD54F;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ─── Honey Drip Divider ──────────────────────────────────────────────────── */
+
+.honey-drip-divider {
+  position: relative;
+  height: 40px;
+  background: transparent;
+}
+
+.honey-drip-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #FFD54F 15%,
+    #F59E0B 50%,
+    #FFD54F 85%,
+    transparent 100%
+  );
+  border-radius: 0 0 50% 50%;
+}
+
+/* ─── Music Volume Slider ────────────────────────────────────────────────── */
+
+.music-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD54F, #F59E0B);
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+}
+
+.music-volume-slider::-webkit-slider-runnable-track {
+  width: 4px;
+  background: linear-gradient(to top, #FFD54F, #F59E0B);
+  border-radius: 100px;
+}
+
+.music-volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD54F, #F59E0B);
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+}
+
+.music-volume-slider::-moz-range-track {
+  width: 4px;
+  background: linear-gradient(to top, #FFD54F, #F59E0B);
+  border-radius: 100px;
+}
