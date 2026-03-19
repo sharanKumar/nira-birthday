@@ -67,8 +67,7 @@ export default function EventDetails() {
               Nira Turns Two!
             </h2>
             <p className="mt-4 text-lg text-bee-dark/60 font-body max-w-md mx-auto">
-              Join us for an evening of fun, laughter, and cake as we celebrate
-              this special milestone! 🐝
+              Buzz on over for Nira&apos;s 2nd Bee-Day where sweet giggles, a hive full of laughter and honey sweet cake awaits!! 🐝
             </p>
           </div>
         </ScrollReveal>
