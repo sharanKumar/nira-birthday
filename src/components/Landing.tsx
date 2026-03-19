@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { heroExit, pulseVariants } from "@/animations/variants";
 import BeeSwarm from "./BeeSwarm";
 import Bee from "./Bee";
+import HoneyScene from "./HoneyScene";
 import { useMusic } from "./MusicContext";
 
 interface LandingProps {
@@ -122,10 +123,27 @@ export default function Landing({ onEnter }: LandingProps) {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-bee-yellow/20 via-bee-amber/10 to-bee-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-bee-gold-dark via-bee-honey to-bee-gold bg-clip-text text-transparent leading-tight">
-                Welcome to Nira&apos;s
-                <br />
-                2nd Birthday Bash
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-transparent leading-tight">
+                <span className="bg-gradient-to-r from-bee-gold-dark via-bee-honey to-bee-gold bg-clip-text">
+                  Welcome to Nira&apos;s
+                  <br />
+                  2nd{" "}
+                </span>
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-bee-gold via-bee-amber to-bee-yellow bg-clip-text"
+                  animate={{ scale: [1, 1.06, 1] }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatDelay: 0.5,
+                  }}
+                >
+                  Bee-Day
+                </motion.span>
+                <span className="bg-gradient-to-r from-bee-gold-dark via-bee-honey to-bee-gold bg-clip-text">
+                  {" "}Bash 🐝
+                </span>
               </h1>
 
               {/* Featured bee orbiting the CTA */}
@@ -146,14 +164,11 @@ export default function Landing({ onEnter }: LandingProps) {
                 <Bee size={24} opacity={0.7} />
               </motion.div>
 
-              <motion.span
-                className="inline-block text-4xl md:text-5xl mt-3"
-                animate={{ rotate: [0, 14, -8, 14, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
-              >
-                🎉
-              </motion.span>
             </div>
+          </div>
+
+          <div className="flex justify-center">
+            <HoneyScene />
           </div>
 
           <motion.p
